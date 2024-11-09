@@ -1,4 +1,4 @@
-# Create a shell.nix File
+er# Create a shell.nix File
 # Open or create a file named shell.nix in your project directory:
 
 nano shell.nix
@@ -15,4 +15,6 @@ pkgs.mkShell {
 }
 
 # CTRL + O
-
+# enter
+# CTRL + X
+# Y
