@@ -122,6 +122,48 @@ def run_query(query):
         return pd.read_sql(query, conn)
 
 
+# 6. Advanced: Use SQLAlchemy for Flexibility
+# Using SQLAlchemy can be advantageous as it supports multiple database backends with the same interface.
+
+#  Install SQLAlchemy:
+
+pip install sqlalchemy
+
+# Sample code:
+
+from sqlalchemy import create_engine
+import pandas as pd
+import streamlit as st
+
+engine = create_engine("sqlite:///example.db")
+
+def run_query(query):
+    with engine.connect() as conn:
+        return pd.read_sql_query(query, conn)
+
+query = st.text_area("Enter SQL query", "SELECT * FROM users")
+if st.button("Run Query"):
+    data = run_query(query)
+    st.write(data)
+
+# 7. Secure Your Application
+# Never expose sensitive information like database passwords in your code. Use environment variables or a configuration file.
+# For example, using environment variables:
+
+import os
+db_password = os.getenv("DB_PASSWORD")
+
+# 8. Deploy Your App (Optional)
+# You can deploy your Streamlit app using platforms like Streamlit Community Cloud, Heroku, or AWS. Make sure to set the environment variables and install required packages in the server environment.
+
+# Additional Tips:
+# Use caching with @st.cache_data to improve performance for repetitive queries.
+# Use st.sidebar for input fields to create a cleaner UI.
+
+@st.cache_data
+def cached_query(query):
+return run_query(query)
+
 
 
 
