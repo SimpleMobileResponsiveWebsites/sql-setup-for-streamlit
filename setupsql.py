@@ -1,32 +1,32 @@
-Setting up SQL with Streamlit involves integrating a SQL database with a Streamlit application. This allows you to build interactive web apps with real-time data querying and visualization. Here's a step-by-step guide:
+#Setting up SQL with Streamlit involves integrating a SQL database with a Streamlit application. This allows you to build interactive web apps with real-time data querying and visualization. Here's a step-by-step guide:
 
-1. Install Required Packages
+# 1. Install Required Packages
 First, make sure you have Streamlit installed along with the appropriate database connector for your SQL database. You can install these using pip.
 
 pip install streamlit
 
-For SQLite:
+# For SQLite:
 
 pip install sqlite3
 
-For PostgreSQL:
+# For PostgreSQL:
 
 pip install psycopg2
 
-For MySQL:
+# For MySQL:
 
 pip install mysql-connector-python
 
-For SQLAlchemy (Universal SQL toolkit):
+# For SQLAlchemy (Universal SQL toolkit):
 
 pip install sqlalchemy
 
-2. Set Up Your Database
-Make sure you have your SQL database set up:
+# 2. Set Up Your Database
+# Make sure you have your SQL database set up:
 
-For SQLite, this could be a simple .db file.
-For PostgreSQL and MySQL, ensure the database is running and you have credentials to access it.
-Example setup for SQLite:
+# For SQLite, this could be a simple .db file.
+# For PostgreSQL and MySQL, ensure the database is running and you have credentials to access it.
+# Example setup for SQLite:
 
 import sqlite3
 
@@ -46,8 +46,8 @@ conn.commit()
 conn.close()
 
 
-3. Create a Streamlit App
-Create a new Python file (e.g., app.py) for your Streamlit application.
+# 3. Create a Streamlit App
+# Create a new Python file (e.g., app.py) for your Streamlit application.
 
 import streamlit as st
 import sqlite3
@@ -76,16 +76,16 @@ if st.button("Run Query"):
         st.error(f"Error: {str(e)}")
 
 
-4. Run Your Streamlit App
-To launch your Streamlit app, use the following command in your terminal:
+# 4. Run Your Streamlit App
+# To launch your Streamlit app, use the following command in your terminal:
 
 streamlit run app.py
 
 
-5. Connect to Different Databases (Optional)
-You might want to connect to a specific SQL database like PostgreSQL or MySQL. Here’s how you can adjust the connection:
+# 5. Connect to Different Databases (Optional)
+# You might want to connect to a specific SQL database like PostgreSQL or MySQL. Here’s how you can adjust the connection:
 
-PostgreSQL Example
+# PostgreSQL Example
 
 import psycopg2
 import pandas as pd
@@ -103,7 +103,7 @@ def run_query(query):
     with init_connection() as conn:
         return pd.read_sql_query(query, conn)
 
-MySQL Example
+# MySQL Example
 
 import mysql.connector
 import pandas as pd
