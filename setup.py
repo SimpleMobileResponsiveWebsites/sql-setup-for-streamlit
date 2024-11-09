@@ -3,3 +3,11 @@ Setting up SQL with Streamlit involves integrating a SQL database with a Streaml
 1. Install Required Packages
 First, make sure you have Streamlit installed along with the appropriate database connector for your SQL database. You can install these using pip.
 
+pip install streamlit
+
+For SQLite:
+
+pip install sqlite3
+
+
+
